@@ -1,0 +1,314 @@
+:root {
+  --bg: #F9F5F2;
+  --text: #3E2723;
+  --accent: #B2533E;
+  --card-bg: #FFFFFF;
+  --header-bg: rgba(249, 245, 242, 0.95);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* Header */
+
+.header .container { display: flex; justify-content: space-between; align-items: center; }
+
+.logo {
+  font-family: 'Cinzel', serif !important; /* Fonte cultural/profissional */
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #3E2723;
+  background: transparent !important; /* Tira qualquer fundo branco */
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.logo span {
+  color: var(--accent);
+  display: block; 
+  font-size: 0.8rem;
+  letter-spacing: 8px;
+  margin-top: -5px; /* Deixa o "Bordados" mais próximo do título */
+  background: transparent !important;
+}
+
+/* Ajuste do Header para sumir o branco total */
+.header {
+  position: fixed;
+  top: 0; 
+  width: 100%;
+  background: rgba(249, 245, 242, 0.8) !important; /* Fundo levemente transparente */
+  backdrop-filter: blur(10px); /* Efeito de vidro desfocado moderno */
+  padding: 10px 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(62, 39, 35, 0.1);
+}
+
+@media (max-width: 768px) {
+  .header .container {
+    display: flex;
+    flex-direction: column; /* Estava faltando o 'i' em direction na sua foto */
+    align-items: center;
+    gap: 10px; }
+  }
+  .menu {
+    display: flex;
+    gap: 25px; /* AQUI: Dá o espaço que você queria entre Coleção e Ateliê */
+    margin-top: 5px;
+  }
+.menu a {
+  text-decoration: none;
+  color: var(--text);
+  margin-left: 0;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Hero com Imagem de Fundo Corrigida */
+.hero {
+  
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #FFFFFF !important;
+  background-image: 
+    linear-gradient(rgba(62, 39, 35, 0.4), rgba(62, 39, 35, 0.6)), 
+    url('../img/imagem_art.jpeg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding-top: 80px;
+}
+
+.hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.btn-hero {
+  display: inline-block;
+  padding: 15px 40px;
+  background-color: var(--accent);
+  color: white !important;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Esconder Carrinho e Tema */
+.icons { display: none !important; }
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.product-img img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.technique { font-size: 0.8rem; font-style: italic; opacity: 0.8; }
+.price { font-size: 1.3rem; font-weight: 700; color: var(--accent); margin: 10px 0; }
+
+.add-to-cart {
+  width: 100%;
+  padding: 12px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.contact-section {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #EFEBE9;
+}
+
+/* Container da Vitrine */
+/* CONTAINER PRINCIPAL DA VITRINE */
+.vitrine {
+    padding: 60px 0;
+    background-color: #fffaf1; /* Creme suave para destacar os cards */
+}
+
+/* O GRID DE PRODUTOS: Organiza os cards lado a lado automaticamente */
+.grid-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsivo para celular */
+    gap: 30px; /* Espaço entre os cards */
+    padding: 20px;
+}
+
+/* O CARD DO PRODUTO: Estrutura que segura tudo */
+.card-produto {
+    background: #ffffff;
+    border-radius: 15px; /* Bordas arredondadas modernas */
+    overflow: hidden; /* Garante que nada saia do card */
+    box-shadow: 0 10px 20px rgba(62, 39, 35, 0.05); /* Sombra bem sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* FLEXBOX: Organiza Imagem (topo) e Texto (baixo) verticalmente */
+    display: flex;
+    flex-direction: column;
+}
+
+.card-produto:hover {
+    transform: translateY(-5px); /* Efeito de flutuação ao passar o mouse */
+    box-shadow: 0 15px 30px rgba(62, 39, 35, 0.1);
+}
+
+/* A IMAGEM DO PRODUTO: O ponto chave da sua dúvida */
+.card-produto img {
+    width: 100%;
+    height: 280px; /* Define uma altura fixa para a imagem */
+    object-fit: cover; /* Faz a imagem preencher o espaço sem distorcer */
+    border-bottom: 1px solid rgba(62, 39, 35, 0.05); /* Linha divisória sutil */
+    
+    /* Garante que o texto não suba para cima dela */
+    position: relative; 
+    z-index: 1;
+}
+
+/* AREA DE INFORMAÇÕES DO PRODUTO (Texto e Botão) */
+.info-produto {
+    padding: 20px;
+    text-align: center;
+    
+    /* Ocupa o restante do espaço do card */
+    flex-grow: 1; 
+    
+    /* FLEXBOX INTERNO: Garante que o botão fique sempre no final */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    
+    position: relative;
+    z-index: 2;
+    background: #ffffff; /* Garante que o fundo do texto seja branco */
+}
+
+.info-produto h3 {
+    font-family: 'Cinzel', serif; /* Fonte cultural/profissional */
+    font-size: 1.2rem;
+    color: #3E2723;
+    margin-bottom: 8px;
+    margin-top: 0;
+}
+
+.info-produto p {
+    font-size: 0.9rem;
+    color: #6d4c41;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Botão Encomendar (WhatsApp) */
+.btn-encomendar {
+    background-color: #25D366; /* Verde oficial do WhatsApp */
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background 0.3s;
+}
+
+.btn-encomendar:hover {
+    background-color: #128C7E;
+}
+.card-produto img {
+    width: 100%;
+    height: 300px; /* Define uma altura fixa para alinhar todos os cards */
+    object-fit: cover; /* Faz a imagem preencher o espaço sem distorcer */
+}
+
+/* Estilização da Seção Ateliê */
+.atelie-section {
+    padding: 80px 20px;
+    background-color: #fdfaf6; /* Um creme levemente diferente para separar as seções */
+    text-align: center;
+}
+
+.section-subtitle {
+    font-style: italic;
+    color: #6d4c41;
+    margin-bottom: 40px;
+}
+
+/* Galeria em formato de Mural */
+.galeria-atelie {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.foto-espaco {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    height: 350px;
+}
+
+.foto-espaco img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a foto preencha o quadro sem distorcer */
+    transition: transform 0.5s ease;
+}
+
+.foto-espaco:hover img {
+    transform: scale(1.1); /* Efeito de zoom elegante ao passar o mouse */
+}
+
+/* Rolagem Suave: Essencial para uma boa experiência */
+html {
+    scroll-behavior: smooth;
+}
