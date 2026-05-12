@@ -60,9 +60,7 @@ body {
     display: flex;
     flex-direction: column; /* Estava faltando o 'i' em direction na sua foto */
     align-items: center;
-    gap: 10px;
-    background-attachment: scroll !important; /* Desativa o efeito fixo no celular */
-    height: 60vh; }
+    gap: 10px; }
   }
   .menu {
     display: flex;
@@ -95,7 +93,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-attachment: scroll;
   padding-top: 80px;
 }
 
@@ -271,47 +268,3 @@ body {
     object-fit: cover; /* Faz a imagem preencher o espaço sem distorcer */
 }
 
-/* Estilização da Seção Ateliê */
-.atelie-section {
-    padding: 80px 20px;
-    background-color: #fdfaf6; /* Um creme levemente diferente para separar as seções */
-    text-align: center;
-}
-
-.section-subtitle {
-    font-style: italic;
-    color: #6d4c41;
-    margin-bottom: 40px;
-}
-
-/* Galeria em formato de Mural */
-.galeria-atelie {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.foto-espaco {
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    height: 350px;
-}
-
-.foto-espaco img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Garante que a foto preencha o quadro sem distorcer */
-    transition: transform 0.5s ease;
-}
-
-.foto-espaco:hover img {
-    transform: scale(1.1); /* Efeito de zoom elegante ao passar o mouse */
-}
-
-/* Rolagem Suave: Essencial para uma boa experiência */
-html {
-    scroll-behavior: smooth;
-}
