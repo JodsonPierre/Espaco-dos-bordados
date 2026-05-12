@@ -60,7 +60,9 @@ body {
     display: flex;
     flex-direction: column; /* Estava faltando o 'i' em direction na sua foto */
     align-items: center;
-    gap: 10px; }
+    gap: 10px;
+    background-attachment: scroll !important; /* Desativa o efeito fixo no celular */
+    height: 60vh; }
   }
   .menu {
     display: flex;
@@ -93,6 +95,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-attachment: scroll;
   padding-top: 80px;
 }
 
